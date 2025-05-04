@@ -1,3 +1,4 @@
+// 获取游戏图片清晰度更小的版本以加快获取与显示速度
 const getCroppedImageUrl = (url: string) => {
     const target = "media/";
     const index = url.indexOf(target) + target.length;
