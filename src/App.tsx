@@ -6,10 +6,14 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import PlatformIconList from "./components/PlatformIconList";
 import PlatformSelector from "./components/PlatformSelector";
+import { Platform } from "./hooks/useData";
 //import { ColorModeToggle } from "./components/color-mode-toggle";
 
 function App() {
     const [seletedGenre, setSeletedGenre] = useState<Genre | null>(null); // add generic type argument
+    const [seletedPlatform, setSeletedPlatform] = useState<Platform | null>(
+        null
+    );
     return (
         <Grid
             templateAreas={{
@@ -33,8 +37,14 @@ function App() {
                 </GridItem>
             </Show>
             <GridItem area="main">
-                <PlatformSelector></PlatformSelector>
-                <GameGrid selectedGenre={seletedGenre}></GameGrid>
+                <PlatformSelector
+                    selectedPlatform={seletedPlatform}
+                    onSelectPlatform={setSeletedPlatform}
+                ></PlatformSelector>
+                <GameGrid
+                    selectedGenre={seletedGenre}
+                    selectedPlatform={seletedPlatform}
+                ></GameGrid>
             </GridItem>
         </Grid>
     );
