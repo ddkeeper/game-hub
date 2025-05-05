@@ -1,4 +1,3 @@
-import React from "react";
 import bullsEye from "../assets/bulls-eye.svg";
 import thumbsUp from "../assets/thumbs-up.svg";
 import neutralFace from "../assets/neutral-face.svg";
